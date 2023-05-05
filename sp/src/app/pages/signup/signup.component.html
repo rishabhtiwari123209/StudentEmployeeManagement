@@ -1,0 +1,133 @@
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+        .cascading-right {
+            margin-right: -50px;
+        }
+
+        @media (max-width: 991.98px) {
+            .cascading-right {
+                margin-right: 0;
+            }
+        }
+    </style>
+
+    <!-- Jumbotron -->
+    <div class="container py-4">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="col-sm card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+                    <div class="  card-body p-5 shadow-5 text-center">
+                        <h2 class="fw-bold mb-5">Sign up now</h2>
+
+                        <!-- 2 column grid layout with text inputs for the first and last names -->
+                        <div class="row">
+                            <div class="col-sm mb-4">
+                                <mat-form-field class="mff" class="example-full-width">
+                                    <mat-label>username</mat-label>
+                                    <input #username matInput>
+                                </mat-form-field>
+                            </div>
+                            <!-- Email input -->
+                            <div class="col-sm mb-4">
+                                <mat-form-field class="mff" class="example-full-width aa">
+                                    <mat-label>Email</mat-label>
+                                    <input type="email" #email matInput [formControl]="emailFormControl"
+                                        [errorStateMatcher]="matcher" placeholder="Ex. pat@example.com">
+                                    <mat-hint>
+
+                                    </mat-hint>
+                                    <mat-error
+                                        *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                        Please enter a valid email address
+                                    </mat-error>
+                                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                                        Email is <strong>required</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm mb-4">
+                                <mat-form-field class="mff" appearance="fill">
+                                    <mat-label>Phone number</mat-label>
+                                    <input #lastname matInput placeholder="955-555-1234" type="number">
+                                    <mat-icon matSuffix>phone</mat-icon>
+
+                                </mat-form-field>
+
+
+                            </div>
+                            <br>
+                            <div class="col-sm mb-4">
+                                <!-- Password input -->
+                                <mat-form-field class="mff" class="aa" appearance="fill">
+                                    <mat-label>Enter your password</mat-label>
+                                    <input #pass matInput [type]="hide ? 'password' : 'text'">
+                                    <button mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="row">
+                            <mat-form-field appearance="fill">
+                                <mat-label>Choose a date</mat-label>
+                                <input #dob matInput [matDatepicker]="picker">
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field> <br>
+                            <br> <button (click)="login( pass,email,username,lastname,dob)"
+                                class="btn btn-primary btn-block mb-4">
+                                Sign up!
+                            </button><br> <button [routerLink]="['']" class="btn btn-primary btn-block mb-4">
+                                Login!
+                            </button>
+                        </div>
+                        <div  *ngIf="displayerr===true" class="div"><div class="alert alert-danger" role="alert">
+                            Fill all data carefully,All data Mandatary                          </div></div>
+
+                    </div>
+
+                </div>
+                <!-- Submit button -->
+
+
+                <!-- Register buttons -->
+
+            </div>
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" class="w-100 rounded-4 shadow-4"
+                    alt="" />
+            </div>
+        </div>
+
+<!-- <div  *ngIf="displayerr===true" class="div">Fill all data carefully,All data Mandatary</div> -->
+
+
+        <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+            <div class="toast-header">
+              <img src="..." class="rounded mr-2" alt="...">
+              <strong class="mr-auto">error</strong>
+              <small>11 mins ago</small>
+              <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="toast-body">
+              Hello, world! This is a toast message.
+            </div>
+          </div>
+    </div>
+
+
+
+    <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->

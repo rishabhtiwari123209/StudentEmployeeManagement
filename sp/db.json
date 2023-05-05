@@ -1,0 +1,15 @@
+{
+  "posts": [
+    {
+      "firstname": "karran",
+      "lastname": "",
+      "birthdate": "2023-04-01",
+      "gender": "f",
+      "education": "diploma",
+      "company": "fdfdf",
+      "jobExperience": 2,
+      "salary": 333333,
+      "id": 12
+    }
+  ]
+}
