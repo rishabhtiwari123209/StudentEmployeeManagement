@@ -8,7 +8,7 @@ var mongoose = require("mongoose")
 const User = require('./models/user')
 const cors = require('cors');
 
-// https://github.com/Vasanth-Korada/SignUpForm-HTML_NodeJS_MongoDB/blob/main/index.js
+
 const app = express()
 app.use(cors());
 app.use(bodyParser.json())
